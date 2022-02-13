@@ -1,63 +1,40 @@
-# CodeIgniter 4 Application Starter
+# Prueba Conekta
 
-## What is CodeIgniter?
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](http://codeigniter.com).
+La prueba fue realizada en el framework codeigniter 4.
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+- Codeigniter 4
+- Flatlab Template
+- Axios
 
-More information about the plans for version 4 can be found in [the announcement](http://forum.codeigniter.com/thread-62615.html) on the forums.
+## Instalacion
 
-The user guide corresponding to this version of the framework can be found
-[here](https://codeigniter4.github.io/userguide/).
+Lo primero que se debe realizar es clonar el repositorio de la siguiente manera:
+En la terminal nos ubicamos donde queremos que quede clonado el repositorio y escribimos la siguiente instruccion.
+```sh
+git clone https://github.com/StiwarJulian/prueba_conekta.git
+```
+Una vez nuestro repositorio este clonado, nos ubicamos sobre el proyecto desde la terminal y instalamos las dependencias de composer.
+```sh
+cd repositorio_clonado
+composer install
+```
+En el momento en el que finalicen las instalaciones de composer deberemos crear la base de datos 
+la cual es el archivo prueba_conekta.sql, se debe importar el archivo.
+Ya teniendo nuestra base de datos creada abriremos el archivo .env y reemplazaremos los siguientes campos por los de nuestra conexion:
 
-## Installation & updates
+```sh
+database.default.hostname = localhost       
+database.default.database = prueba_conekta // Nombre Base Datos
+database.default.username = root // usuario Base Datos
+database.default.password = ""   // clave Base Datos
+```
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+por ultimo ya teniendo esto configurado procederemos a desplegar nuestro servidor con las siguientes instrucciones en la terminal
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+```sh
+php spark serve
+```
 
-## Setup
-
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
-
-## Important Change with index.php
-
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
-
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
-
-**Please** read the user guide for a better explanation of how CI4 works!
-
-## Repository Management
-
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
-
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
-
-## Server Requirements
-
-PHP version 7.3 or higher is required, with the following extensions installed:
-
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
-
-Additionally, make sure that the following extensions are enabled in your PHP:
-
-- json (enabled by default - don't turn it off)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php)
-- xml (enabled by default - don't turn it off)
+En este momento ya nuestro servidor estara desplegado con nuestra aplicacion.
