@@ -1,0 +1,25 @@
+{
+    "menu" : [
+        {
+            "label": "Panel Principal",
+            "icon": "fa fa-home",
+            "url": "platform/dashboard",
+            "yield": "active-dashboard",
+            "children": []
+        },
+        {
+            "label": "Productos",
+            "icon": "fa fa-archive",
+            "url": "platform/productos",
+            "yield": "active-productos",
+            "children": []
+        },
+        {
+            "label": "Ventas",
+            "icon": "fa fa-credit-card",
+            "url": "platform/ventas",
+            "yield": "active-ventas",
+            "children": []
+        }
+    ]
+}
